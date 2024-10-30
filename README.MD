@@ -1,6 +1,6 @@
-# First Django Project 2-MGV-2
+# Тестовый проект веб блог 2 МГВ 2
 
-## Install
+## Установка
 
 ### 1. Установите Python.
 
@@ -21,7 +21,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-## Run
+## Запуск
 
 ### Для запуска сервера используйте следующую команду:
 ```bash
