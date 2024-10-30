@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Добро пожаловать!</h1>
+    </div>
+    <div class="sidebar">
+        <ul>
+            {% for key, value in menu.items %}
+            <li><a href="{{value}}">{{key}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 2-МГВ-2</p>
+</footer>
+
+</body>
+</html>

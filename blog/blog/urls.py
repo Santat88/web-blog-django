@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.urls import path
-from .view import helloPage
+from .views import main_page, post_page, about_page
 
 urlpatterns = [
-    path('', helloPage),
+    path('', main_page),
+    path('about/', about_page),
+    path('post/', post_page),
 ]
