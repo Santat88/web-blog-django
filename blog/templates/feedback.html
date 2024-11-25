@@ -1,6 +1,36 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <h1>{{title}}</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, blanditiis et eveniet ipsa, labore libero magnam maiores modi molestias nemo placeat provident sint sunt temporibus tenetur ullam veniam vero!</p>
+
+{% if feedbackRecords %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Email</th>
+                <th>Текст отзыва</th>
+                <th>Проверен</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for feedback in feedbackRecords %}
+                <tr>
+                    <td>{{ feedback.name }}</td>
+                    <td>{{ feedback.email }}</td>
+                    <td>{{ feedback.text }}</td>
+                    <td>{% if feedback.checked %}
+				Проверен
+			    {% else %}
+				Непроверен
+			    {% endif %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Отзывы отсутсвуют</p>
+{% endif %}
+
+<a href="{% url 'add_feedback_record' %}" class="button">Добавить отзыв</a>
+
 {% endblock %}
